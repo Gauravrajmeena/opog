@@ -17,23 +17,23 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
       title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      label: 'of using vs code?',
+      action: 'What are the advantages of using vs code?',
     },
     {
-      title: 'Write code that',
-      label: `demonstrates djikstra's algorithm`,
-      action: `Write code that demonstrates djikstra's algorithm`,
+      title: 'Write code ',
+      label: `of calculator `,
+      action: `Write code of calculator `,
     },
     {
       title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      label: `on Atal Tinkering Labs`,
+      action: `Help me write an essay on Atal Tinkering Labs`,
     },
     {
       title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      label: 'in Jhilmil Colony, Delhi?',
+      action: 'What is the weather in Jhilmil Colony, Delhi?',
     },
   ];
 
