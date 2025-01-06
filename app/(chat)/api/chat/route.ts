@@ -102,10 +102,14 @@ export async function POST(request: Request) {
 
       const result = streamText({
         model: customModel(model.apiIdentifier),
-        system: systemPrompt,
+        system: model.id === 'gemini-pro' 
+          ? 'You are a helpful AI assistant powered by Google Gemini Pro.'
+          : systemPrompt,
         messages: coreMessages,
         maxSteps: 5,
-        experimental_activeTools: allTools,
+        experimental_activeTools: model.id === 'gemini-pro' 
+          ? ['getWeather'] // Gemini might have different tool support
+          : allTools,
         tools: {
           getWeather: {
             description: 'Get the current weather at a location',

@@ -9,16 +9,16 @@ export interface Model {
 
 export const models: Array<Model> = [
   {
-    id: 'gpt-4o-mini',
-    label: 'GPT 4o mini',
-    apiIdentifier: 'gpt-4o-mini',
-    description: 'Small model for fast, lightweight tasks',
+    id: 'gpt4-mini',
+    label: 'GPT-4 Mini',
+    apiIdentifier: 'gpt-4-mini',
+    description: 'Smaller, faster version of GPT-4',
   },
   {
-    id: 'gpt-4o',
-    label: 'GPT 4o',
-    apiIdentifier: 'gpt-4o',
-    description: 'For complex, multi-step tasks',
+    id: 'gemini-pro',
+    label: 'Gemini Pro',
+    apiIdentifier: 'gemini-pro',
+    description: 'Google's most capable AI model for text generation',
   },
 ] as const;
 
