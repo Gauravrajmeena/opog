@@ -1,5 +1,9 @@
 {
-    "buildCommand": "pnpm run vercel-build",
-    "installCommand": "pnpm install",
-    "framework": "nextjs"
-  } 
+  "buildCommand": "pnpm run vercel-build",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "framework": "nextjs",
+  "version": 2,
+  "env": {
+    "NODE_VERSION": "18.x"
+  }
+} 
