@@ -1,9 +1,14 @@
 {
-  "buildCommand": "pnpm run vercel-build",
-  "installCommand": "pnpm install --no-frozen-lockfile",
-  "framework": "nextjs",
-  "version": 2,
   "env": {
-    "NODE_VERSION": "18.x"
-  }
-} 
+    "GOOGLE_GENERATIVE_AI_API_KEY": "@google-generative-ai-key",
+    "NODE_ENV": "production"
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "outputDirectory": "out"
+}
