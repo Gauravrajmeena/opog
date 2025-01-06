@@ -1,5 +1,15 @@
 {
-    "env": {
-      "GOOGLE_GENERATIVE_AI_API_KEY": "@google-generative-ai-key"
+  "env": {
+    "GOOGLE_GENERATIVE_AI_API_KEY": "@google-generative-ai-key",
+    "NODE_ENV": "production"
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
     }
-  } 
+  ],
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "outputDirectory": "out"
+}
+  
