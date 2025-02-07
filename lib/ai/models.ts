@@ -7,19 +7,35 @@ export interface Model {
   description: string;
 }
 
-export const models: Array<Model> = [
+export const MODELS = [
   {
     id: 'gpt-4o-mini',
-    label: 'GPT 4o mini',
+    label: 'GPT 4o-mini',
     apiIdentifier: 'gpt-4o-mini',
-    description: 'Small model for fast, lightweight tasks',
+    description: 'For quick tasks',
   },
   {
-    id: 'gpt-4o',
-    label: 'GPT 4o',
-    apiIdentifier: 'gpt-4o',
-    description: 'For complex, multi-step tasks',
+    id: 'deepseek-ai',
+    label: 'DeepSeek AI',
+    apiIdentifier: 'deepseek-ai',
+    description: 'For deep search tasks and assistance',
   },
 ] as const;
 
 export const DEFAULT_MODEL_NAME: string = 'gpt-4o-mini';
+
+// TypeScript
+import { customModel } from './index';
+import { deepseekModel } from './deepseek';
+
+export const getModel = (modelName: string) => {
+  switch (modelName) {
+    // Removed case "gpt-4o"
+    case "gpt-4o-mini":
+      return customModel("gpt-4o-mini");
+    case "deepseek-ai":
+      return deepseekModel(process.env.DEEPSEEK_API_KEY || '');
+    default:
+      throw new Error(`Unknown model: ${modelName}`);
+  }
+};
