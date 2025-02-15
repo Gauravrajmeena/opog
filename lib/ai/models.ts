@@ -20,6 +20,12 @@ export const models: Array<Model> = [
     apiIdentifier: 'gpt-4o',
     description: 'For complex, multi-step tasks',
   },
+  {
+    id: 'deepseek-ai',
+    label: 'DeepSeek AI',
+    apiIdentifier: 'deepseek-ai',
+    description: 'Model for DeepSeek API',
+  },
 ] as const;
 
 export const DEFAULT_MODEL_NAME: string = 'gpt-4o-mini';

@@ -32,6 +32,7 @@ import {
 } from '@/lib/utils';
 
 import { generateTitleFromUserMessage } from '../../actions';
+import { callDeepSeekAPI } from '@/lib/ai/deepseek';
 
 export const maxDuration = 60;
 
@@ -92,6 +93,13 @@ export async function POST(request: Request) {
       { ...userMessage, id: userMessageId, createdAt: new Date(), chatId: id },
     ],
   });
+
+  // Add logic for DeepSeek AI
+  if (model.id === 'deepseek-ai') {
+    const deepSeekResponse = await callDeepSeekAPI(userMessage.content);
+    // Process the response as needed
+    return new Response(JSON.stringify(deepSeekResponse), { status: 200 });
+  }
 
   return createDataStreamResponse({
     execute: (dataStream) => {

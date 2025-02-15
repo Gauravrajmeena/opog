@@ -50,7 +50,6 @@ export function ModelSelector({
             key={model.id}
             onSelect={() => {
               setOpen(false);
-
               startTransition(() => {
                 setOptimisticModelId(model.id);
                 saveModelId(model.id);
