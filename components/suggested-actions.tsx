@@ -17,28 +17,31 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
       title: 'What are the advantages',
-      label: 'of using vs code?',
-      action: 'What are the advantages of using vs code?',
+      label: 'of using Next.js?',
+      action: 'What are the advantages of using Next.js?',
     },
     {
-      title: 'Write code ',
-      label: `of calculator `,
-      action: `Write code of calculator `,
+      title: 'Write code to',
+      label: `demonstrate djikstra's algorithm`,
+      action: `Write code to demonstrate djikstra's algorithm`,
     },
     {
       title: 'Help me write an essay',
-      label: `on Atal Tinkering Labs`,
-      action: `Help me write an essay on Atal Tinkering Labs`,
+      label: `about silicon valley`,
+      action: `Help me write an essay about silicon valley`,
     },
     {
       title: 'What is the weather',
-      label: 'in Jhilmil Colony, Delhi?',
-      action: 'What is the weather in Jhilmil Colony, Delhi?',
+      label: 'in San Francisco?',
+      action: 'What is the weather in San Francisco?',
     },
   ];
 
   return (
-    <div className="grid sm:grid-cols-2 gap-2 w-full">
+    <div
+      data-testid="suggested-actions"
+      className="grid sm:grid-cols-2 gap-2 w-full"
+    >
       {suggestedActions.map((suggestedAction, index) => (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
